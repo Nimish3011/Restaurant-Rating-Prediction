@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Restaurant Rating Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+            <header>
+                <div class="logo"></div>
+            <h2 class="title">Restaurant Rating Prediction</h2>
+            </header>
+        <form id="prediction-form" method="post" action="/predict">
+            <label for="location">What is the location of this restaurant?<span class="mandatory">*</span></label>
+            <select id="location" name="location" required>
+                {% for location in unique_locations %}
+                <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="rest_type">What is the type of restaurant?<span class="mandatory">*</span></label>
+            <select id="rest_type" name="rest_type" required>
+                {% for rest_type in unique_rest_types %}
+                <option value="{{ rest_type }}">{{ rest_type }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="cuisines">What cuisines does this restaurant serve?<span class="mandatory">*</span></label>
+            <select id="cuisines" name="cuisines" required>
+                {% for cuisine in unique_cuisines %}
+                <option value="{{ cuisine }}">{{ cuisine }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="cost">What is the estimated cost for two people?<span class="mandatory">*</span></label>
+            <input type="text" id="cost" name="cost" required>
+
+            <label for="votes">How many votes has this restaurant received?<span class="mandatory">*</span></label>
+            <input type="text" id="votes" name="votes" required>
+
+            <label for="online_order">Does the restaurant accept online orders?<span class="mandatory">*</span></label>
+            <select id="online_order" name="online_order" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="book_table">Does the restaurant have an option to book a table?<span class="mandatory">*</span></label>
+            <select id="book_table" name="book_table" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <div class="container-1">
+                <button type="submit" id="submit-btn" class="flex-start">Predict</button>
+                <div id="prediction-result" class="flex-end"></div>
+              </div>              
+        </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+body {
+    background: url("../assets/restaurant_bg.jpg") no-repeat;
+    background-size:cover; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2px;
+}
+
+.container {
+    max-width: 350px;
+    margin-top: 5px;
+    margin-left: 170px;    
+    padding: 15px;
+    border-radius: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+header {
+    text-align: center;
+}
+
+.logo {
+    background: url("../assets/Zomato.png");
+    background-repeat: no-repeat;
+    background-size: 150px 33px;
+    width: 150px;
+    height: 33px;
+    margin: 0 auto; /* This will center the logo horizontally */
+}
+
+.title {
+    margin-top: 7px;
+    margin-bottom: 15px;
+    font-family: Open Sans;
+    color: white;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.mandatory {
+    color: red;
+    margin-left: 5px;
+}
+
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+    border: 1px solid rgba(250, 246, 246, 0.16);
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    margin-right: 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    text-transform: uppercase;
+
+}
+
+#prediction-result {
+    color: #fff;
+    margin-left: 70px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container-1 {
+    display: inline-flex;
+    justify-content: space-between;
+  }
